@@ -1,0 +1,6 @@
+{
+  "name": "RawDog",
+  "description": "RawDog - Terminal, code editor, devtools browser, and network security suite with Kali Linux userspace for Android.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
