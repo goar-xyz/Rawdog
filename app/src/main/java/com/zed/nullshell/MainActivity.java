@@ -175,7 +175,6 @@ public class MainActivity extends Activity {
         buildEmptyState();
         buildDrawer();
         buildSessionsDrawer();
-        buildBottomNav();
 
         term.setModifierListener((ctrl, alt) -> main.post(() -> {
             if (ctrlKey != null) Ui.setKeyActive(this, ctrlKey, ctrl);
@@ -415,6 +414,7 @@ public class MainActivity extends Activity {
         m.add(0, 6, 3, "Editor").setEnabled(installed);
         m.add(0, 7, 4, "Browser");
         m.add(0, 9, 5, "Files");
+        m.add(0, 15, 6, "OpenDroid Agent");
         m.add(0, 10, 7, "Network");
         m.add(0, 12, 8, "VNC server");
         m.add(0, 8, 9, "Memory");
@@ -430,6 +430,7 @@ public class MainActivity extends Activity {
                 case 6: startActivity(new Intent(this, EditorActivity.class)); return true;
                 case 7: BrowserActivity.open(this, null); return true;
                 case 9: FileManagerActivity.open(this, null); return true;
+                case 15: startActivity(new Intent(this, OpenDroidActivity.class)); return true;
                 case 10: startActivity(new Intent(this, NetworkActivity.class)); return true;
                 case 12: startActivity(new Intent(this, VncActivity.class)); return true;
                 case 8: MemoryReport.show(this, "Trim scrollback", () -> SessionManager.get().trimScrollback(500)); return true;
@@ -668,58 +669,6 @@ public class MainActivity extends Activity {
             }
         });
         sessionsSlot.addView(sessionsPanel, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-    }
-
-    private void buildBottomNav() {
-        View navTerminal = findViewById(R.id.nav_terminal);
-        View navEditor = findViewById(R.id.nav_editor);
-        View navFiles = findViewById(R.id.nav_files);
-        View navNetwork = findViewById(R.id.nav_network);
-        View navHub = findViewById(R.id.nav_hub);
-
-        if (navTerminal == null) return;
-
-        navTerminal.setBackground(Ui.ripple(this, 0, 8));
-        navTerminal.setOnClickListener(v -> {
-            if (sessionsOpen) closeSessions();
-            if (drawerOpen) closeDrawer();
-            if (term != null) {
-                term.requestFocus();
-                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                if (imm != null) imm.showSoftInput(term, 0);
-            }
-        });
-
-        navEditor.setBackground(Ui.ripple(this, 0, 8));
-        navEditor.setOnClickListener(v -> {
-            if (sessionsOpen) closeSessions();
-            if (drawerOpen) closeDrawer();
-            if (RootfsManager.isInstalled(this)) {
-                startActivity(new Intent(this, EditorActivity.class));
-            } else {
-                Toast.makeText(this, "Install Kali first to use the Editor", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        navFiles.setBackground(Ui.ripple(this, 0, 8));
-        navFiles.setOnClickListener(v -> {
-            if (sessionsOpen) closeSessions();
-            if (drawerOpen) closeDrawer();
-            FileManagerActivity.open(this, null);
-        });
-
-        navNetwork.setBackground(Ui.ripple(this, 0, 8));
-        navNetwork.setOnClickListener(v -> {
-            if (sessionsOpen) closeSessions();
-            if (drawerOpen) closeDrawer();
-            startActivity(new Intent(this, NetworkActivity.class));
-        });
-
-        navHub.setBackground(Ui.ripple(this, 0, 8));
-        navHub.setOnClickListener(v -> {
-            if (sessionsOpen) closeSessions();
-            else openSessions();
-        });
     }
 
     private void openSessions() {

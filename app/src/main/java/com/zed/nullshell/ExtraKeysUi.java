@@ -48,9 +48,9 @@ final class ExtraKeysUi {
                 LinearLayout.LayoutParams nlp = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f);
                 nlp.leftMargin = Ui.dp(a, 10);
                 row.addView(name, nlp);
-                row.addView(action(a, "▲", idx > 0, () -> { swap(ids, idx, idx - 1); render[0].run(); }));
-                row.addView(action(a, "▼", idx < ids.size() - 1, () -> { swap(ids, idx, idx + 1); render[0].run(); }));
-                row.addView(action(a, "✕", ids.size() > 1, () -> { ids.remove(idx); render[0].run(); }));
+                row.addView(action(a, "^", idx > 0, () -> { swap(ids, idx, idx - 1); render[0].run(); }));
+                row.addView(action(a, "v", idx < ids.size() - 1, () -> { swap(ids, idx, idx + 1); render[0].run(); }));
+                row.addView(action(a, "X", ids.size() > 1, () -> { ids.remove(idx); render[0].run(); }));
                 list.addView(row);
             }
         };

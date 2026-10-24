@@ -8,12 +8,7 @@ package com.zed.nullshell;
 final class NativePty {
     private NativePty() { }
 
-    static final boolean AVAILABLE;
-    static {
-        boolean ok;
-        try { System.loadLibrary("nsterm"); ok = true; } catch (Throwable t) { ok = false; }
-        AVAILABLE = ok;
-    }
+    static final boolean AVAILABLE = false;
 
     /** Runs cmd on a new terminal. Returns {masterFd, pid}; throws RuntimeException on failure. */
     static native int[] spawn(String cmd, String[] argv, String[] env, String cwd, int rows, int cols);

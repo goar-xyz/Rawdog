@@ -57,7 +57,8 @@ public class VncActivity extends Activity {
         title.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
         title.setPadding(Ui.dp(this, 8), 0, 0, 0);
         bar.addView(title, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f));
-        TextView settings = Ui.iconButton(this, "⚙");
+        TextView settings = Ui.iconButton(this, "Config");
+        settings.setTextSize(TypedValue.COMPLEX_UNIT_SP, 12);
         settings.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)
                 .putExtra(SettingsActivity.EXTRA_CATEGORY, "vnc")));
         bar.addView(settings);

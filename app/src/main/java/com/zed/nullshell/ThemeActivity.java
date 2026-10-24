@@ -205,7 +205,7 @@ public class ThemeActivity extends Activity {
             ThemePreview pv = new ThemePreview(this, t, Theme.accent(this), t.id.equals(selected));
             cell.addView(pv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(118)));
             TextView name = new TextView(this);
-            name.setText((t.id.equals(selected) ? "✓  " : "") + t.name);
+            name.setText((t.id.equals(selected) ? "[x] " : "") + t.name);
             name.setTextColor(t.id.equals(selected) ? Ui.ACCENT : Ui.TEXT);
             name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 13);
             name.setPadding(dp(4), dp(6), 0, 0);

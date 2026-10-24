@@ -1,1 +1,4 @@
-<resources><string name="app_name">RawDog</string></resources>
+<resources>
+    <string name="app_name">RawDog</string>
+    <string name="opendroid_a11y_description">OpenDroid: Autonomous agent screen inspection and accessibility automation service.</string>
+</resources>

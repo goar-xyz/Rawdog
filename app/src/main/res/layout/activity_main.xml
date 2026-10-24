@@ -50,44 +50,4 @@
         <LinearLayout android:id="@+id/extrakeys" android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:orientation="horizontal" android:padding="3dp"/>
     </HorizontalScrollView>
-
-    <View android:id="@+id/nav_bar_divider" android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/line"/>
-    <LinearLayout android:id="@+id/bottom_nav" android:layout_width="match_parent" android:layout_height="48dp"
-        android:orientation="horizontal" android:gravity="center_vertical" android:background="@color/surface">
-        <LinearLayout android:id="@+id/nav_terminal" android:layout_width="0dp" android:layout_height="match_parent"
-            android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:clickable="true">
-            <TextView android:id="@+id/nav_terminal_icon" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text=">_" android:textStyle="bold" android:fontFamily="monospace" android:textSize="13sp" android:textColor="@color/accent"/>
-            <TextView android:id="@+id/nav_terminal_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Terminal" android:textSize="10sp" android:textColor="@color/accent"/>
-        </LinearLayout>
-        <LinearLayout android:id="@+id/nav_editor" android:layout_width="0dp" android:layout_height="match_parent"
-            android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:clickable="true">
-            <TextView android:id="@+id/nav_editor_icon" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="&lt;/&gt;" android:textStyle="bold" android:fontFamily="monospace" android:textSize="13sp" android:textColor="#8B929C"/>
-            <TextView android:id="@+id/nav_editor_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Editor" android:textSize="10sp" android:textColor="#8B929C"/>
-        </LinearLayout>
-        <LinearLayout android:id="@+id/nav_files" android:layout_width="0dp" android:layout_height="match_parent"
-            android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:clickable="true">
-            <TextView android:id="@+id/nav_files_icon" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="📁" android:textSize="13sp" android:textColor="#8B929C"/>
-            <TextView android:id="@+id/nav_files_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Files" android:textSize="10sp" android:textColor="#8B929C"/>
-        </LinearLayout>
-        <LinearLayout android:id="@+id/nav_network" android:layout_width="0dp" android:layout_height="match_parent"
-            android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:clickable="true">
-            <TextView android:id="@+id/nav_network_icon" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="⚡" android:textSize="13sp" android:textColor="#8B929C"/>
-            <TextView android:id="@+id/nav_network_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Network" android:textSize="10sp" android:textColor="#8B929C"/>
-        </LinearLayout>
-        <LinearLayout android:id="@+id/nav_hub" android:layout_width="0dp" android:layout_height="match_parent"
-            android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:clickable="true">
-            <TextView android:id="@+id/nav_hub_icon" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="☰" android:textSize="14sp" android:textColor="#8B929C"/>
-            <TextView android:id="@+id/nav_hub_label" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Hub" android:textSize="10sp" android:textColor="#8B929C"/>
-        </LinearLayout>
-    </LinearLayout>
 </LinearLayout>
